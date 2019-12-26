@@ -1,0 +1,25 @@
+{
+  "name": "vue-websocket-client",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+  },
+  "dependencies": {
+    "js-cookie": "^2.2.1",
+    "sockjs-client": "latest",
+    "view-design": "^4.0.0",
+    "vue": "^2.6.10",
+    "webstomp-client": "^1.2.6"
+  },
+  "devDependencies": {
+    "@vue/cli-service": "^4.1.0",
+    "vue-cli-plugin-iview": "^2.0.0",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
+}
