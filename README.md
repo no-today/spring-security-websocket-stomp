@@ -8,4 +8,4 @@
 
 `cd vue-websocket-client && yarn run serve`
 
-![](pic/demo.jpg)
+![](./pic/demo.jpg)
