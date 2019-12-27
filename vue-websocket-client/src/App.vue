@@ -23,8 +23,8 @@
             <Button type="primary" @click="subscribe" :disabled="!connected">Subscribe</Button>
           </FormItem>
 
-          <FormItem label="Topic">
-            <Input size="large" v-model="form.topic" placeholder="Topic..."/>
+          <FormItem label="Mapping">
+            <Input size="large" v-model="form.mapping" placeholder="Mapping..."/>
           </FormItem>
           <FormItem label="Message">
             <Input size="large" v-model="form.message" placeholder="Message..."/>
@@ -59,9 +59,9 @@
         messages: []
       },
       form: {
-        subscribes: ['/topic/tracker'],
+        subscribes: ['/topic/tracker', '/topic/dashboard'],
         endpoint: '/websocket/tracker',
-        topic: '/topic/activity',
+        mapping: '/topic/activity',
         message: ''
       },
       connected: false,
@@ -75,7 +75,7 @@
     send() {
       console.log("send message:" + this.form.message);
       if (this.client && this.client.connected) {
-        this.client.send(this.form.topic, this.form.message, {});
+        this.client.send(this.form.mapping, this.form.message, {});
       }
     },
     connect() {
@@ -98,9 +98,17 @@
     subscribe() {
       this.form.subscribes.forEach(e => {
         this.client.subscribe(e, tick => {
+
+          let content;
+          try {
+            content = JSON.parse(tick.body);
+          } catch (e) {
+            content = tick.body;
+          }
+
           this.table.messages.push({
             time: new Date().toLocaleString(),
-            content: JSON.parse(tick.body)
+            content: content
           });
         });
       })
@@ -119,6 +127,6 @@
 
 .text-center {
   text-align: center;
-  margin: 30px;
+  margin: 40px;
 }
 </style>
