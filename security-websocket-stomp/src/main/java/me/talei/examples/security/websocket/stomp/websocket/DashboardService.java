@@ -4,7 +4,6 @@ import org.springframework.messaging.simp.SimpMessageSendingOperations;
 import org.springframework.stereotype.Controller;
 
 import javax.annotation.PostConstruct;
-import javax.websocket.server.ServerEndpoint;
 import java.util.Random;
 import java.util.UUID;
 

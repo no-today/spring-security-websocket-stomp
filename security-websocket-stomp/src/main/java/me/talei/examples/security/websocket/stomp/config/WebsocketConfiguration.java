@@ -28,8 +28,7 @@ public class WebsocketConfiguration implements WebSocketMessageBrokerConfigurer 
 
     @Override
     public void configureMessageBroker(MessageBrokerRegistry config) {
-        config.enableSimpleBroker("/topic");
-        config.enableSimpleBroker("/topic/dashboard");
+        config.enableSimpleBroker("/topic", "/topic/dashboard");
     }
 
     @Override
