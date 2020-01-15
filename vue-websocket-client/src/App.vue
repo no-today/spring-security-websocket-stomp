@@ -1,5 +1,8 @@
 <template>
   <div id="app">
+    <Row class="text-center">
+      Websocket Stomp Client
+    </Row>
     <Col offset="1" span="10">
       <Card id="config">
         <p slot="title">
@@ -144,6 +147,11 @@
   -moz-osx-font-smoothing: grayscale;
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+.text-center {
+  text-align: center;
+  margin: 30px;
 }
 
 #app #message /deep/ .ivu-card-body {
